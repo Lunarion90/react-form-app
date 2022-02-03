@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-form-app/static/css/main.d2bade5d.css",
+    "main.js": "/react-form-app/static/js/main.8b2efa57.js",
+    "static/js/787.daca81ad.chunk.js": "/react-form-app/static/js/787.daca81ad.chunk.js",
+    "static/media/logo.png": "/react-form-app/static/media/logo.0167fb0618f9b5e52f3b.png",
+    "index.html": "/react-form-app/index.html",
+    "main.d2bade5d.css.map": "/react-form-app/static/css/main.d2bade5d.css.map",
+    "main.8b2efa57.js.map": "/react-form-app/static/js/main.8b2efa57.js.map",
+    "787.daca81ad.chunk.js.map": "/react-form-app/static/js/787.daca81ad.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2bade5d.css",
+    "static/js/main.8b2efa57.js"
+  ]
+}
