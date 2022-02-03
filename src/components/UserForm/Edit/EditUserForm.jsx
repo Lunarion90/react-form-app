@@ -1,10 +1,9 @@
 import { useState, useContext, useEffect } from 'react';
 import DatePicker from "react-datepicker";
 import PhoneInput from 'react-phone-input-2';
-import SimpleDate from "simple-datejs";
 
 import { FormContext } from "../../../context/FormContext.jsx"
-import { SetJSONFromContext, StoreToSession } from "../../../utils/utils.js";
+import { StoreToSession } from "../../../utils/utils.js";
 
 export default function EditUserForm({ setEditMode }) {
 

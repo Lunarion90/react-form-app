@@ -1,17 +1,10 @@
 import { useContext } from 'react';
 
 import { FormContext } from "../../../context/FormContext.jsx"
-import { storeToSession } from "../../../utils/utils.js";
 
 export default function DisplayUserForm({ setEditMode }) {
 
-    const { firstName, setFirstName,
-            lastName, setLastName,
-            email, setEmail,
-            phoneNumber, setPhoneNumber,
-            birthday, setBirthday,
-            about, setAbout,
-            avatar, setAvatar } = useContext(FormContext);
+    const { firstName, lastName, email, phoneNumber, birthday, about, avatar } = useContext(FormContext);
 
     const isEmpty = () => {
         if (!firstName && !lastName && !email && !phoneNumber && !birthday && !about && !avatar) return true;
