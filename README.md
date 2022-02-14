@@ -1,6 +1,7 @@
 # Sample React application of Registration
 
 A small web application to fill out a form and store it in the session storage. Built for showcase. Requested by Dynamic Solutions Ltd.
+A running version is available through GitHub Pages: https://lunarion90.github.io/react-form-app/
 
 ## Available Scripts
 
