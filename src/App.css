@@ -219,6 +219,9 @@ input {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     padding: 15px;
 }
 
@@ -338,12 +341,5 @@ footer {
 
     #mobileAvatarSelector {
         display: none;
-    }
-}
-
-@media (min-height: 1425px){
-    footer {
-        bottom: 0;
-        position: absolute;
     }
 }
