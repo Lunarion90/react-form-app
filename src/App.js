@@ -1,23 +1,17 @@
-import { useState } from 'react';
+import React, { useState } from 'react'
 
-import logo from './assets/logo.png';
+import logo from './assets/logo.png'
 
-import './App.css';
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css'
 import 'react-phone-input-2/lib/style.css'
-import 'w3-css/w3.css';
+import './App.css'
 
-import EditUserForm from "./components/UserForm/Edit/EditUserForm.jsx"
-import DisplayUserForm from "./components/UserForm/Display/DisplayUserForm.jsx"
-import FormContextProvider from "./context/FormContext.jsx"
+import EditUserForm from './components/UserForm/Edit/EditUserForm.jsx'
+import DisplayUserForm from './components/UserForm/Display/DisplayUserForm.jsx'
+import FormContextProvider from './context/FormContext.jsx'
 
-function App() {
-
-  const [editMode, setEditMode] = useState(false);
-
-  const editStateChanger = (isEdit) => {
-    setEditMode(isEdit);
-  }
+function App () {
+  const [editMode, setEditMode] = useState(false)
 
   return (
     <div className="App">
@@ -25,16 +19,16 @@ function App() {
         <img src={logo} id="logo" alt="Logo" />
         <ul className="breadcrumb">
           <li><a href="#" onClick={() => setEditMode(false)}>Home</a></li>
-          <li><a href="#">{editMode ? "Register" : "Profile"}</a></li>
+          <li><a href="#">{editMode ? 'Register' : 'Profile'}</a></li>
         </ul>
       </header>
-      <nav className="sticky w3-sidebar w3-light-grey w3-bar-block App-navigation" >
-        <a className="w3-bar-item w3-button" onClick={() => setEditMode(false)}>Profile</a>
-        <a className="w3-bar-item w3-button" onClick={() => setEditMode(true)}>Register</a>
+      <nav className="sticky App-navigation" >
+        <a onClick={() => setEditMode(false)}>Profile</a>
+        <a onClick={() => setEditMode(true)}>Register</a>
       </nav>
       <main className="App-content">
         <FormContextProvider>
-            {editMode ? <EditUserForm setEditMode = {editStateChanger}/> : <DisplayUserForm />}
+            {editMode ? <EditUserForm setEditMode = {setEditMode}/> : <DisplayUserForm />}
         </FormContextProvider>
       </main>
       <footer className="App-footer">
@@ -45,7 +39,7 @@ function App() {
         <p>Quisque consectetur erat sit amet orci consectetur dignissim. Aenean convallis lorem in rhoncus hendrerit. Nulla quis tristique erat, eget auctor neque. Integer at commodo ante. Quisque suscipit et nibh id pulvinar. Nunc suscipit leo eget turpis scelerisque, a accumsan leo dignissim. Cras luctus justo vel tellus convallis efficitur. Morbi imperdiet pulvinar fermentum. Sed arcu felis, rutrum eu accumsan eu, auctor at dui. Vestibulum consectetur vestibulum maximus. In rutrum eleifend nunc, dapibus rhoncus diam vestibulum a. Suspendisse hendrerit, erat nec bibendum tincidunt, erat neque euismod odio, imperdiet vestibulum ipsum quam rhoncus felis. Morbi sit amet bibendum elit. Vestibulum arcu elit, faucibus vestibulum sodales sed, porta et massa.</p>
       </footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

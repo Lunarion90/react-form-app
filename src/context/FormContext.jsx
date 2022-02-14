@@ -1,31 +1,41 @@
-import { createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
+import PropTypes from 'prop-types'
 
-export const FormContext = createContext();
+export const FormContext = createContext()
 
-export default function FormContextProvider(props) {
+export default function FormContextProvider (props) {
+  const formDataJSON = JSON.parse(window.sessionStorage.getItem('formData'))
 
-    const formDataJSON = JSON.parse(window.sessionStorage.getItem("formData"));
+  const [firstName, setFirstName] = useState(formDataJSON ? formDataJSON.firstName : '')
+  const [lastName, setLastName] = useState(formDataJSON ? formDataJSON.lastName : '')
+  const [email, setEmail] = useState(formDataJSON ? formDataJSON.email : '')
+  const [phoneNumber, setPhoneNumber] = useState(formDataJSON ? formDataJSON.phoneNumber : '')
+  const [birthday, setBirthday] = useState(formDataJSON ? formDataJSON.birthday : '')
+  const [about, setAbout] = useState(formDataJSON ? formDataJSON.about : '')
+  const [avatar, setAvatar] = useState(formDataJSON ? formDataJSON.avatar : '')
 
-    const [firstName, setFirstName] = useState(formDataJSON ? formDataJSON.firstName : "");
-    const [lastName, setLastName] = useState(formDataJSON ? formDataJSON.lastName : "");
-    const [email, setEmail] = useState(formDataJSON ? formDataJSON.email : "");
-    const [phoneNumber, setPhoneNumber] = useState(formDataJSON ? formDataJSON.phoneNumber : "");
-    const [birthday, setBirthday] = useState(formDataJSON ? new Date(formDataJSON.birthday) : "");
-    const [about, setAbout] = useState(formDataJSON ? formDataJSON.about : "");
-    const [avatar, setAvatar] = useState(formDataJSON ? formDataJSON.avatar : "");
-
-    return (
+  return (
             <FormContext.Provider value={{
-            firstName, setFirstName,
-            lastName, setLastName,
-            email, setEmail,
-            phoneNumber, setPhoneNumber,
-            birthday, setBirthday,
-            about, setAbout,
-            avatar, setAvatar
+              firstName,
+              setFirstName,
+              lastName,
+              setLastName,
+              email,
+              setEmail,
+              phoneNumber,
+              setPhoneNumber,
+              birthday,
+              setBirthday,
+              about,
+              setAbout,
+              avatar,
+              setAvatar
             }}>
                 {props.children}
             </FormContext.Provider>
-        )
+  )
+}
 
+FormContextProvider.propTypes = {
+  children: PropTypes.element
 }
